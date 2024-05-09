@@ -57,7 +57,9 @@ PrefabInstance:
       value: Weird_Tree
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 8196798520224901374, guid: 3ae5922e97401ff478a6e966b31617e1, type: 3}
+    - {fileID: 5994721076960434074, guid: 3ae5922e97401ff478a6e966b31617e1, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3ae5922e97401ff478a6e966b31617e1, type: 3}
