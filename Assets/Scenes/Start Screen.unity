@@ -140,7 +140,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &28620495
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -163,8 +163,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: OPTIONS
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: e09872ce82f07a2418088d1798df2dfd, type: 2}
-  m_sharedMaterial: {fileID: 6068251165804655663, guid: e09872ce82f07a2418088d1798df2dfd, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: d86599a8a306f2b48b4a71e5de619810, type: 2}
+  m_sharedMaterial: {fileID: -5211253445931446561, guid: d86599a8a306f2b48b4a71e5de619810, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -611,6 +611,7 @@ GameObject:
   - component: {fileID: 142518283}
   - component: {fileID: 142518282}
   - component: {fileID: 142518281}
+  - component: {fileID: 142518285}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -703,6 +704,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &142518285
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 142518280}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9073023fa9474814a9405d1db664075d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &270136524
 GameObject:
   m_ObjectHideFlags: 0
@@ -1244,12 +1257,12 @@ GameObject:
   - component: {fileID: 458939960}
   - component: {fileID: 458939959}
   m_Layer: 5
-  m_Name: StartPanel (1)
+  m_Name: Options
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &458939958
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1265,7 +1278,6 @@ RectTransform:
   - {fileID: 113088460}
   - {fileID: 28620497}
   - {fileID: 36235845}
-  - {fileID: 2106914916}
   - {fileID: 786850715}
   m_Father: {fileID: 142518284}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1345,7 +1357,7 @@ RectTransform:
   m_Father: {fileID: 412211770}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -1722,11 +1734,12 @@ RectTransform:
   - {fileID: 40950823}
   - {fileID: 412211770}
   - {fileID: 559000936}
+  - {fileID: 2106914916}
   m_Father: {fileID: 458939958}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 2.3528, y: 0.000024796}
+  m_AnchoredPosition: {x: 2.3528, y: -43}
   m_SizeDelta: {x: 628.0973, y: 65.2671}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &786850716
@@ -1773,13 +1786,25 @@ MonoBehaviour:
   m_FillRect: {fileID: 534032089}
   m_HandleRect: {fileID: 1565058676}
   m_Direction: 0
-  m_MinValue: 0
-  m_MaxValue: 1
+  m_MinValue: -80
+  m_MaxValue: 0
   m_WholeNumbers: 0
   m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2063020906}
+        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
+        m_MethodName: SetVolume
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &799786566
 GameObject:
   m_ObjectHideFlags: 0
@@ -2321,8 +2346,8 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 559000936}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -2685,6 +2710,7 @@ MonoBehaviour:
   title2: {fileID: 2143373721}
   option1: {fileID: 113088459}
   option2: {fileID: 28620494}
+  optionsPanel: {fileID: 458939957}
   glitchInterval: 0.2
 --- !u!114 &2063020906
 MonoBehaviour:
@@ -2698,6 +2724,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c781be0044f91c34b815b75571d4b3d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioMixer: {fileID: 24100000, guid: ee38e32ed65e7d2468f01de99fd176b3, type: 2}
 --- !u!1 &2106914915
 GameObject:
   m_ObjectHideFlags: 0
@@ -2728,12 +2755,12 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 458939958}
+  m_Father: {fileID: 786850715}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 49}
-  m_SizeDelta: {x: -1296.6084, y: -922.0489}
+  m_AnchoredPosition: {x: -2.3527832, y: 49}
+  m_SizeDelta: {x: -4.7056885, y: 92.68402}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2106914917
 MonoBehaviour:

@@ -9,12 +9,15 @@ public class TitleGlitch : MonoBehaviour
     public GameObject option1;
     public GameObject option2;
 
+    public GameObject optionsPanel;
+
     public float glitchInterval = 0.5f; 
 
     private void Start()
     {
         InvokeRepeating("Glitch", 0f, glitchInterval);
         InvokeRepeating("OptionsGlitch", 0f, glitchInterval);
+        optionsPanel.SetActive(false);
     }
 
     private void Glitch()
