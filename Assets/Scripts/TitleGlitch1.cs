@@ -14,10 +14,16 @@ public class PausedMenu : MonoBehaviour
 
     public KeyCode pauseKey;
 
+    public AudioClip glitchSound;
+    public AudioSource audioSource;
+
+    private bool previousTitleState;
+
     private void Start()
     {
         pauseMenu.SetActive(false);
         InvokeRepeating("Glitch", 0f, glitchInterval);
+        previousTitleState = false;
     }
 
     void Update()
@@ -42,6 +48,18 @@ public class PausedMenu : MonoBehaviour
 
         title1.gameObject.SetActive(showTitle1);
         title2.gameObject.SetActive(!showTitle1);
+
+        if (showTitle1 != previousTitleState)
+        {
+            if (glitchSound != null)
+            {
+                if (isPaused)
+                {
+                    audioSource.PlayOneShot(glitchSound);
+                }
+            }
+            previousTitleState = !showTitle1;
+        }
     }
     public void PauseGame()
     {
