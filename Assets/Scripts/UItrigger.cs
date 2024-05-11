@@ -7,10 +7,9 @@ public class UItrigger : MonoBehaviour
 {
     public UnityEvent Enter, Toggled, Untoggled, OtherInput, Exit;
 
-    [Header("Assign Intereact button, PlayerMovement Reference")]
+    [Header("Assign Intereact button, Player_Movement Reference")]
     public KeyCode Interact;
     public bool Active = false;
-    public PlayerMovement PM;
     private void OnTriggerEnter(Collider other)
     {
         if(other.tag == "Player")
@@ -31,7 +30,6 @@ public class UItrigger : MonoBehaviour
                     Active = true;
                     Cursor.lockState = CursorLockMode.None;
                     Cursor.visible = true;
-                    PM.canMove = false;
                     Toggled.Invoke();
                     Debug.Log("Toggled");
                 }
@@ -43,7 +41,6 @@ public class UItrigger : MonoBehaviour
                 Debug.Log("Active == false");
                 Cursor.lockState = CursorLockMode.Locked;
                 Cursor.visible = false;
-                PM.canMove = true;
                 Untoggled.Invoke();
                 Debug.Log("Untoggled");
             }

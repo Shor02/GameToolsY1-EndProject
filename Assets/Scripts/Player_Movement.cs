@@ -28,32 +28,33 @@ public class Player_Movement : MonoBehaviour
     public Vector3 velocity;
     
     private void Update()
-    {
+    { 
         // Ground Check
         // Creates invisible sphere at object, detects collisions with ground_Mask layer
+   
         is_Grounded = Physics.CheckSphere(ground_Check.position, ground_Distance, ground_Mask);
-
+            
         if (is_Grounded && velocity.y < 0)
         {
             // Not 0 because sphere protrudes  down, would cause floating effect
             velocity.y = -2f;
         }
-        
+                    
         // Movement
         float x_axis = Input.GetAxis("Horizontal");
         float z_axis = Input.GetAxis("Vertical");
-        
+                    
         // Move player locally along axis
         Vector3 movement = transform.right * x_axis + transform.forward * z_axis;
         controller.Move(movement * movement_speed * Time.deltaTime);
+                    
         
-       
-          if (Input.GetButtonDown("Jump") && is_Grounded)
-          {
-                velocity.y = MathF.Sqrt(jump_height * -2f * gravity);
-          }
-
-        
+        if (Input.GetButtonDown("Jump") && is_Grounded)
+        {
+            velocity.y = MathF.Sqrt(jump_height * -2f * gravity);
+        }
+            
+                    
         // Crouch / Grav Boots
         if (Input.GetKeyDown(KeyCode.LeftControl))
         {
@@ -61,18 +62,19 @@ public class Player_Movement : MonoBehaviour
             gravity = gravity * grav_Boot_Multiplier;
             grav_Boot_Active = true;
         }
-        
+                    
         if (Input.GetKeyUp(KeyCode.LeftControl))
         {
             controller.height = normal_Height;
             gravity = gravity / grav_Boot_Multiplier;
             grav_Boot_Active = false;
         }
-        
+                    
         // Gravity
         velocity.y += gravity * Time.deltaTime;
         controller.Move(velocity * Time.deltaTime);
-
+            
     }// end Update
+        
     
 }// end Player_Movement
